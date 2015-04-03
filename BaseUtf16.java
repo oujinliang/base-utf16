@@ -2,9 +2,8 @@
  * Encode any bytes to Utf16 chars
  */
 public class BaseUtf16 {
-
-    private static final int[][] Utf16Range = {{0x0900, 0x18FF}, {0x1D00, 0x2CFF}, {0x3000, 0x8FFF}};
-    private static final int[][] BitsRange  = {{0x0000, 0x0FFF}, {0x1000, 0x1FFF}, {0x2000, 0x7FFF}};
+    private static final int[][] BitsRange  = {{0x0000, 0x0fff}, {0x1000, 0x5fff}, {0x6000, 0x7fff}};
+    private static final int[][] Utf16Range = {{0x3400, 0x43ff}, {0x4e00, 0x9dff}, {0xb000, 0xcfff}};
 
     public static char[] encode(byte[] bytes) {
         validate(bytes != null && bytes.length != 0, "bytes is null or empty");
